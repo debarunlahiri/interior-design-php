@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="700" viewBox="0 0 1000 700" role="img" aria-label="Modern bedroom illustration">
+  <rect width="1000" height="700" fill="#e7ded2"/>
+  <rect x="70" y="70" width="860" height="490" rx="24" fill="#f6f1ea"/>
+  <rect x="70" y="540" width="860" height="110" fill="#cdb499"/>
+  <rect x="190" y="360" width="620" height="140" rx="22" fill="#a87952"/>
+  <rect x="220" y="320" width="560" height="65" rx="16" fill="#d9c3aa"/>
+  <rect x="230" y="230" width="260" height="90" rx="14" fill="#e8d9ca"/>
+  <rect x="530" y="230" width="260" height="90" rx="14" fill="#e8d9ca"/>
+  <circle cx="170" cy="190" r="44" fill="#d9b28b"/>
+</svg>

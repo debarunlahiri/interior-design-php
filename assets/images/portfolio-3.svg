@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="700" viewBox="0 0 1000 700" role="img" aria-label="Artful dining room illustration">
+  <rect width="1000" height="700" fill="#efe3d6"/>
+  <rect x="65" y="65" width="870" height="500" rx="26" fill="#fbf6ef"/>
+  <rect x="65" y="545" width="870" height="110" fill="#d4baa0"/>
+  <ellipse cx="500" cy="430" rx="250" ry="95" fill="#b07b50"/>
+  <ellipse cx="500" cy="395" rx="235" ry="60" fill="#d6b697"/>
+  <rect x="215" y="245" width="160" height="145" rx="18" fill="#e8d5bf"/>
+  <rect x="415" y="245" width="170" height="145" rx="18" fill="#e8d5bf"/>
+  <rect x="625" y="245" width="160" height="145" rx="18" fill="#e8d5bf"/>
+  <circle cx="830" cy="180" r="50" fill="#f3ddb4"/>
+</svg>
