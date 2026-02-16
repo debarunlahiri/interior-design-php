@@ -142,6 +142,39 @@ $faqs = [
         'answer' => 'Absolutely. We regularly integrate existing pieces and elevate them with updated layouts, finishes, and complementary styling.'
     ]
 ];
+
+$galleryImages = [
+    [
+        'title' => 'Soft Neutral Living Area',
+        'image' => 'https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=1400',
+        'fallback' => 'assets/images/portfolio-1.svg'
+    ],
+    [
+        'title' => 'Elegant Dining Styling',
+        'image' => 'https://images.pexels.com/photos/1080721/pexels-photo-1080721.jpeg?auto=compress&cs=tinysrgb&w=1400',
+        'fallback' => 'assets/images/portfolio-3.svg'
+    ],
+    [
+        'title' => 'Warm Modern Bedroom',
+        'image' => 'https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg?auto=compress&cs=tinysrgb&w=1400',
+        'fallback' => 'assets/images/portfolio-2.svg'
+    ],
+    [
+        'title' => 'Contemporary Lounge Corner',
+        'image' => 'https://images.pexels.com/photos/5824907/pexels-photo-5824907.jpeg?auto=compress&cs=tinysrgb&w=1400',
+        'fallback' => 'assets/images/portfolio-1.svg'
+    ],
+    [
+        'title' => 'Premium Kitchen Mood',
+        'image' => 'https://images.pexels.com/photos/6489127/pexels-photo-6489127.jpeg?auto=compress&cs=tinysrgb&w=1400',
+        'fallback' => 'assets/images/portfolio-2.svg'
+    ],
+    [
+        'title' => 'Luxury Bathroom Detail',
+        'image' => 'https://images.pexels.com/photos/6585755/pexels-photo-6585755.jpeg?auto=compress&cs=tinysrgb&w=1400',
+        'fallback' => 'assets/images/portfolio-3.svg'
+    ]
+];
 ?>
 <!doctype html>
 <html lang="en">
@@ -175,6 +208,7 @@ $faqs = [
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-lg-3">
                     <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
                     <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
                     <li class="nav-item"><a class="nav-link" href="#process">Process</a></li>
                     <li class="nav-item"><a class="nav-link" href="#testimonials">Reviews</a></li>
                     <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
@@ -330,6 +364,35 @@ $faqs = [
             </div>
         </section>
 
+        <section id="gallery" class="container py-5">
+            <div class="section-heading text-center mb-5 fade-in-up">
+                <p class="hero-kicker">Inspiration Board</p>
+                <h2 class="display-6 fw-bold">Design Gallery</h2>
+            </div>
+            <div class="row g-4">
+                <?php foreach ($galleryImages as $index => $item): ?>
+                    <div class="col-sm-6 col-lg-4 fade-in-up delay-<?= ($index % 3) + 1 ?>">
+                        <button
+                            type="button"
+                            class="gallery-item"
+                            data-preview-trigger
+                            data-image="<?= htmlspecialchars($item['image']) ?>"
+                            data-fallback="<?= htmlspecialchars($item['fallback']) ?>"
+                            data-title="<?= htmlspecialchars($item['title']) ?>"
+                        >
+                            <img
+                                src="<?= htmlspecialchars($item['image']) ?>"
+                                data-fallback="<?= htmlspecialchars($item['fallback']) ?>"
+                                alt="<?= htmlspecialchars($item['title']) ?>"
+                                class="img-fluid"
+                            >
+                            <span class="gallery-caption"><?= htmlspecialchars($item['title']) ?></span>
+                        </button>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+        </section>
+
         <section id="testimonials" class="container py-5">
             <div class="section-heading text-center mb-5 fade-in-up">
                 <p class="hero-kicker">Client Feedback</p>
@@ -463,6 +526,21 @@ $faqs = [
                     <div class="alert alert-success mt-3 d-none" id="inquirySuccess" role="alert">
                         Thank you. Your inquiry has been received. Our team will contact you shortly.
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="imagePreviewModal" tabindex="-1" aria-labelledby="imagePreviewModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-xl">
+            <div class="modal-content preview-modal">
+                <div class="modal-header border-0 pb-0">
+                    <h2 class="modal-title fs-5 fw-semibold" id="imagePreviewModalLabel">Project Preview</h2>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body pt-2">
+                    <img id="previewModalImage" src="" alt="Selected design preview" class="img-fluid rounded-3 w-100">
+                    <p class="preview-caption mb-0 mt-3" id="previewModalCaption"></p>
                 </div>
             </div>
         </div>

@@ -58,4 +58,33 @@ document.addEventListener('DOMContentLoaded', () => {
             customerInfoForm.classList.remove('was-validated');
         });
     }
+
+    const imagePreviewModalEl = document.getElementById('imagePreviewModal');
+    const previewModalImage = document.getElementById('previewModalImage');
+    const previewModalCaption = document.getElementById('previewModalCaption');
+    if (imagePreviewModalEl && previewModalImage && previewModalCaption) {
+        const previewModal = bootstrap.Modal.getOrCreateInstance(imagePreviewModalEl);
+
+        document.querySelectorAll('[data-preview-trigger]').forEach((trigger) => {
+            trigger.addEventListener('click', () => {
+                const title = trigger.getAttribute('data-title') || 'Project Preview';
+                const primary = trigger.getAttribute('data-image');
+                const fallback = trigger.getAttribute('data-fallback');
+                const imageEl = trigger.querySelector('img');
+                const selectedSrc = primary || (imageEl ? imageEl.currentSrc || imageEl.src : '');
+
+                previewModalImage.src = selectedSrc;
+                previewModalImage.alt = title;
+                previewModalCaption.textContent = title;
+
+                previewModalImage.onerror = () => {
+                    if (fallback) {
+                        previewModalImage.src = fallback;
+                    }
+                };
+
+                previewModal.show();
+            });
+        });
+    }
 });
