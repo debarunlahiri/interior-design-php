@@ -46,36 +46,42 @@ $services = [
 
 $portfolio = [
     [
+        'slug' => 'calm-scandinavian-living-room',
         'title' => 'Calm Scandinavian Living Room',
         'style' => 'Minimal / Light Oak / Linen',
         'image' => 'https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=1400',
         'fallback' => 'assets/images/portfolio-1.svg'
     ],
     [
+        'slug' => 'modern-earthy-bedroom',
         'title' => 'Modern Earthy Bedroom',
         'style' => 'Neutral / Texture / Soft Lighting',
         'image' => 'https://images.pexels.com/photos/1643383/pexels-photo-1643383.jpeg?auto=compress&cs=tinysrgb&w=1400',
         'fallback' => 'assets/images/portfolio-2.svg'
     ],
     [
+        'slug' => 'artful-dining-concept',
         'title' => 'Artful Dining Concept',
         'style' => 'Contemporary / Stone / Statement Decor',
         'image' => 'https://images.pexels.com/photos/1080721/pexels-photo-1080721.jpeg?auto=compress&cs=tinysrgb&w=1400',
         'fallback' => 'assets/images/portfolio-3.svg'
     ],
     [
+        'slug' => 'luxury-kitchen-remodel',
         'title' => 'Luxury Kitchen Remodel',
         'style' => 'Quartz / Matte Black / Warm Wood',
         'image' => 'https://images.pexels.com/photos/6489127/pexels-photo-6489127.jpeg?auto=compress&cs=tinysrgb&w=1400',
         'fallback' => 'assets/images/portfolio-1.svg'
     ],
     [
+        'slug' => 'executive-office-lounge',
         'title' => 'Executive Office Lounge',
         'style' => 'Corporate / Acoustic / Ambient Light',
         'image' => 'https://images.pexels.com/photos/6585755/pexels-photo-6585755.jpeg?auto=compress&cs=tinysrgb&w=1400',
         'fallback' => 'assets/images/portfolio-2.svg'
     ],
     [
+        'slug' => 'boutique-cafe-interior',
         'title' => 'Boutique Cafe Interior',
         'style' => 'Earthy / Brass / Social Seating',
         'image' => 'https://images.pexels.com/photos/5824907/pexels-photo-5824907.jpeg?auto=compress&cs=tinysrgb&w=1400',
@@ -287,18 +293,21 @@ $galleryImages = [
             <div class="row g-4">
                 <?php foreach ($portfolio as $index => $project): ?>
                     <div class="col-lg-4 col-md-6 fade-in-up delay-<?= ($index % 3) + 1 ?>">
-                        <article class="portfolio-card">
-                            <img
-                                src="<?= htmlspecialchars($project['image']) ?>"
-                                data-fallback="<?= htmlspecialchars($project['fallback']) ?>"
-                                alt="<?= htmlspecialchars($project['title']) ?>"
-                                class="img-fluid"
-                            >
-                            <div class="portfolio-overlay">
-                                <h3><?= htmlspecialchars($project['title']) ?></h3>
-                                <p><?= htmlspecialchars($project['style']) ?></p>
-                            </div>
-                        </article>
+                        <a class="portfolio-link" href="project.html?slug=<?= urlencode($project['slug']) ?>">
+                            <article class="portfolio-card">
+                                <img
+                                    src="<?= htmlspecialchars($project['image']) ?>"
+                                    data-fallback="<?= htmlspecialchars($project['fallback']) ?>"
+                                    alt="<?= htmlspecialchars($project['title']) ?>"
+                                    class="img-fluid"
+                                >
+                                <div class="portfolio-overlay">
+                                    <h3><?= htmlspecialchars($project['title']) ?></h3>
+                                    <p><?= htmlspecialchars($project['style']) ?></p>
+                                    <span class="portfolio-cta">View Project Details</span>
+                                </div>
+                            </article>
+                        </a>
                     </div>
                 <?php endforeach; ?>
             </div>

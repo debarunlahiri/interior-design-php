@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Project Details | Aura Interiors</title>
+    <meta name="description" content="Detailed interior design project view.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="assets/css/styles.css" rel="stylesheet">
+    <style>
+        .project-hero {
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid #e3ceb5;
+            background: #000;
+        }
+
+        .project-hero img {
+            width: 100%;
+            aspect-ratio: 16/9;
+            object-fit: cover;
+        }
+
+        .project-panel {
+            background: var(--surface);
+            border: 1px solid #ecd9c2;
+            border-radius: 18px;
+            padding: 1.25rem;
+        }
+
+        .project-meta {
+            color: var(--muted);
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .project-list {
+            margin: 0;
+            padding-left: 1.1rem;
+            color: #3a2f26;
+        }
+
+        .project-list li {
+            margin-bottom: 0.35rem;
+        }
+
+        .back-link {
+            color: #3d2c1c;
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="hero-bg"></div>
+
+    <header class="container py-4">
+        <a class="back-link" href="index.html">&larr; Back to All Projects</a>
+    </header>
+
+    <main class="container pb-5">
+        <section class="py-3">
+            <p class="hero-kicker mb-2" id="projectCategory">Project</p>
+            <h1 class="display-5 fw-bold mb-3" id="projectTitle">Project Details</h1>
+            <p class="lead mb-4" id="projectSummary">Loading project details...</p>
+
+            <div class="project-hero mb-4">
+                <img id="projectImage" src="assets/images/portfolio-1.svg" alt="Project image">
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <div class="project-panel h-100">
+                        <h2 class="h5 fw-bold mb-3">Project Snapshot</h2>
+                        <p class="project-meta mb-2"><strong>Location:</strong> <span id="projectLocation"></span></p>
+                        <p class="project-meta mb-2"><strong>Area:</strong> <span id="projectArea"></span></p>
+                        <p class="project-meta mb-2"><strong>Timeline:</strong> <span id="projectTimeline"></span></p>
+                        <p class="project-meta mb-0"><strong>Budget:</strong> <span id="projectBudget"></span></p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="project-panel h-100">
+                        <h2 class="h5 fw-bold mb-3">Scope of Work</h2>
+                        <ul class="project-list" id="projectScope"></ul>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="project-panel h-100">
+                        <h2 class="h5 fw-bold mb-3">Materials & Finishes</h2>
+                        <ul class="project-list" id="projectMaterials"></ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="assets/js/project-details.js"></script>
+</body>
+</html>

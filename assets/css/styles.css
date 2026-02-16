@@ -521,3 +521,22 @@ h3 {
         padding: 1.4rem;
     }
 }
+
+.portfolio-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+.portfolio-link:hover .portfolio-cta {
+    opacity: 1;
+}
+
+.portfolio-cta {
+    display: inline-block;
+    margin-top: 0.4rem;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    opacity: 0.9;
+}
