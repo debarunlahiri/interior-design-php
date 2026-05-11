@@ -557,8 +557,8 @@ $galleryImages = [
 
     <footer class="container pb-4">
         <div class="footer-line d-flex flex-column flex-md-row justify-content-between gap-2">
-            <p class="mb-0">&copy; 2020 Debarun Lahiri. All rights reserved.</p>
-            <p class="mb-0">Designed with purpose and personality.</p>
+            <p class="mb-0">&copy; 2026 All rights reserved.</p>
+            <p class="mb-0">Designed & Developed By Bitknob Innovation.</p>
         </div>
     </footer>
 
